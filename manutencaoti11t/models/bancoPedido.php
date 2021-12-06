@@ -13,11 +13,13 @@ function listaPed($conexao){
     return $resultados;
 }
 
+
 function listacodPed($conexao,$codPed){
     $query = "Select * from tbpedido where codPed={$codPed}";
 
     $resultados = mysqli_query($conexao,$query);
-    return $resultados;
+    $resul=mysqli_fetch_array($resultados);
+    return $resul;
 }
 
 function delPed($conexao,$codPed){
@@ -28,8 +30,16 @@ function delPed($conexao,$codPed){
 }
 
 function altPed($conexao,$codPed,$nomePed,$emailPed,$telefonePed,$problemaPed){
-    $query = "update tbpedido set nomePed ='{$nomePed}', emailPed = '{$emailPed}', telefonePed = '{$telefonePed}', problemaPed = '{$problemaPed} where codPed = '{$codPed}'";
+    $query = "update tbpedido set nomePed ='{$nomePed}', emailPed = '{$emailPed}', telefonePed = '{$telefonePed}', problemaPed = '{$problemaPed}' where codPed = '{$codPed}'";
 
     $resultados = mysqli_query($conexao,$query);
     return $resultados;
+}
+
+function visualizar($conexao,$codPed){
+    $query = "Select * from tbpedido where codPed={$codPed}";
+
+    $resultados = mysqli_query($conexao,$query);
+    $resul=mysqli_fetch_array($resultados);
+    return $resul;
 }

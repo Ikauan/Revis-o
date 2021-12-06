@@ -32,13 +32,13 @@ include_once("../models/conexao.php");
                     <td>
                         <form action="../controllers/deletarPed.php" method="POST">
                             <input type="hidden" name="deletarPed" value="<?= $pedidos['codPed'] ?>">
-                            <button type="submit" class="btn-small btn-danger">Deletar</button>
+                            <button type="submit" class="btn btn-dark">Deletar</button>
                         </form>
                     </td>
                     <td>
                         <form action="../views/altPed.php" method="POST">
                             <input type="hidden" name="alterarPed" value="<?= $pedidos['codPed'] ?>">
-                            <button type="submit" class="btn-small btn-success">Alterar</button>
+                            <button type="submit" class="btn btn-dark">Alterar</button>
                         </form>
                     </td>
                 </tr>
